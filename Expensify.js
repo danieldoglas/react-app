@@ -9,7 +9,6 @@ import SignedOffNav from './navigation/SignedOffNav';
 export default function Expensify() {
     const [isLoggedIn, setLoggedIn ] = useState(false);
     const setData = value => {
-        console.log("iihu");
         setLoggedIn(value);
     }
     return (
