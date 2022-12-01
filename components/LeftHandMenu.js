@@ -1,9 +1,16 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
-export default function LeftHandMenu({navigation, routes}) {
+export default function LeftHandMenu({navigation, route}) {
   return (
-    <View>
+    <View style={{
+        backgroundColor: 'blue',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100%',
+        width: "35%",
+      }}>
+        
       <Text>LeftHandMenu</Text>
     </View>
   )
