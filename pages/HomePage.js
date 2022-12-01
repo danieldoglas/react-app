@@ -9,7 +9,9 @@ const isSmallScreenWidth = initialDimensions.width <= 800;
         
 const Stack = createNativeStackNavigator();
 
+// Home page is responsible for both / and /r/:id 
 export default function HomePage({route}) {
+
   return isSmallScreenWidth ? 
     (<Stack.Navigator screenOptions={({ route, navigation })=> ({headerShown: false})}> 
         <Stack.Screen name='LeftHandMenu' component={LeftHandMenu} initialParams={{isSmallScreenWidth}}/>

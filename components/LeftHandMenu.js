@@ -4,8 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 
 export default function LeftHandMenu({navigation, route, isSmallScreenWidth}) {
     const navigateToChat = function() {
-        debugger;
-        navigation.navigate("/Chat");
+        // This navigation works only when on mobile, since this is a part of 
+        navigation.navigate("Chat");
     };
     const isSmallScreen = route ? route.params.isSmallScreenWidth : isSmallScreenWidth;
     return (
@@ -14,19 +14,10 @@ export default function LeftHandMenu({navigation, route, isSmallScreenWidth}) {
             <Text>Expensify App</Text>
         </View>
         <View style={styles.cardView}>
-            <Button onPress={navigateToChat} title='User 1'></Button>
+            <Button onPress={() => navigation.navigate("Chat") } title='Navigate to Chat'></Button>
         </View>
         <View style={styles.cardView}>
-            <Button title='User 2'></Button>
-        </View>
-        <View style={styles.cardView}>
-            <Button title='User 3'></Button>
-        </View>
-        <View style={styles.cardView}>
-            <Button title='User 4'></Button>
-        </View>
-        <View style={styles.cardView}>
-            <Button title='User 5'></Button>
+            <Button onPress={() => navigation.navigate("Settings") } title='Navigate to Settings (Level 1)'></Button>
         </View>
     </SafeAreaView>
   )
@@ -34,7 +25,6 @@ export default function LeftHandMenu({navigation, route, isSmallScreenWidth}) {
 }
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'blue',
         display: "flex",
         flexDirection: "column",
         alignItems: 'center',
