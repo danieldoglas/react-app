@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 export default function SignedOffNav({callbackFunction}) {
   return (
     
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={({ route, navigation })=> ({headerShown: false})}>
       <Stack.Screen name="Login" component={LoginPage} initialParams={{callbackFunction}} />
       <Stack.Screen name="About" component={AboutPage} />
     </Stack.Navigator>

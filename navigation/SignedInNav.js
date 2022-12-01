@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 
 export default function SignedInNav() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={({ route, navigation })=> ({headerShown: false})}>
         <Stack.Group>
             <Stack.Screen name="Home" component={HomePage} />
             <Stack.Screen name="Search" component={SearchPage} />

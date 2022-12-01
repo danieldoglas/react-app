@@ -11,16 +11,16 @@ const Stack = createNativeStackNavigator();
 
 export default function HomePage() {
   return isSmallScreenWidth ? 
-    (<Stack.Navigator> 
-        <Stack.Screen name='LeftHandMenu' component={LeftHandMenu}/>
-        <Stack.Screen name='Chat' component={Chat}/>
-        <Stack.Screen />
+    (<Stack.Navigator screenOptions={({ route, navigation })=> ({headerShown: false})}> 
+        <Stack.Screen name='LeftHandMenu' component={LeftHandMenu} initialParams={{isSmallScreenWidth}}/>
+        <Stack.Screen name='Chat' component={Chat} initialParams={{isSmallScreenWidth}}/>
+
     </Stack.Navigator>) : (<View style={{
             display: 'flex',
             flexWrap: 'nowrap',
             height: '100%',
             flexDirection: "row"}}>
-                <LeftHandMenu />
-                <Chat />
+                <LeftHandMenu initialParams={{isSmallScreenWidth}}/>
+                <Chat initialParams={{isSmallScreenWidth}}/>
             </View>);
 }
