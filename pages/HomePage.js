@@ -10,14 +10,17 @@ const isSmallScreenWidth = initialDimensions.width <= 800;
 const Stack = createNativeStackNavigator();
 
 export default function HomePage() {
-  return (
-  <View style={{
-    display: 'flex',
-    flexWrap: 'nowrap',
-    height: '100%',
-    flexDirection: "row"}}>
-        <LeftHandMenu />
-        <Chat />
-    </View>)
-
+  return isSmallScreenWidth ? 
+    (<Stack.Navigator> 
+        <Stack.Screen name='LeftHandMenu' component={LeftHandMenu}/>
+        <Stack.Screen name='Chat' component={Chat}/>
+        <Stack.Screen />
+    </Stack.Navigator>) : (<View style={{
+            display: 'flex',
+            flexWrap: 'nowrap',
+            height: '100%',
+            flexDirection: "row"}}>
+                <LeftHandMenu />
+                <Chat />
+            </View>);
 }
