@@ -15,10 +15,13 @@ export default function SettingsPage({navigation}) {
             <Button onPress={() => navigation.navigate("Profile") } title='Navigate to Profile (Level 2)'></Button>
         </View>
         <View>
-            <Button onPress={() => navigation.navigate("Wallet") } title='Navigate to Wallet (Level 3)'></Button>
+            <Button onPress={() => navigation.navigate("Wallet") } title='Navigate to Wallet (Level 2)'></Button>
         </View>
         <View>
-            <Button onPress={() => navigation.navigate("About") } title='Navigate to About (Level 4)'></Button>
+            <Button onPress={() => navigation.navigate("About") } title='Navigate to About (Level 2)'></Button>
+        </View>
+        <View>
+            <Button onPress={() => navigation.navigate("PaymentMethods") } title='Navigate to PaymentMethods (Level 2)'></Button>
         </View>
       <Button onPress={()=>{navigation.goBack()}} title="Go Back"></Button>
     </SafeAreaView>

@@ -11,7 +11,8 @@ export default function AboutPage({navigation}) {
         height: '100%'
       }}>
       <Text>About Page</Text>
-      <Button onPress={()=>{navigation.goBack()}} title="Go Back"></Button>
+      <Button onPress={()=>{navigation.navigate({ name: "Settings", options: {animation:'slide_from_right'}})}} title="Go to Settings"></Button>
+      <Button onPress={()=>{navigation.goBack()}} title="Go Back to caller"></Button>
     </SafeAreaView>
   )
 }

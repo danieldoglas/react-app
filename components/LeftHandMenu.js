@@ -1,6 +1,7 @@
 import { View, Button, StyleSheet, Text} from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { Link } from '@react-navigation/native';
 
 export default function LeftHandMenu({navigation, route, isSmallScreenWidth}) {
     const navigateToChat = function() {
@@ -9,12 +10,12 @@ export default function LeftHandMenu({navigation, route, isSmallScreenWidth}) {
     };
     const isSmallScreen = route ? route.params.isSmallScreenWidth : isSmallScreenWidth;
     return (
-    <SafeAreaView style={{...styles.container, width: isSmallScreen ? "100%" : "35%"}}>
+    <SafeAreaView style={{...styles.container, width: isSmallScreen ? "100%" : "35%", backgroundColor: isSmallScreen ? '' : 'green'}}>
         <View style={styles.header}>
             <Text>Expensify App</Text>
         </View>
         <View style={styles.cardView}>
-            <Button onPress={() => navigation.navigate("Chat") } title='Navigate to Chat'></Button>
+            <Link to="/r/asdasd">Navigate to Chat</Link>
         </View>
         <View style={styles.cardView}>
             <Button onPress={() => navigation.navigate("Settings") } title='Navigate to Settings (Level 1)'></Button>

@@ -5,24 +5,34 @@ import SettingsPage from '../pages/SettingsPage';
 import AboutPage from '../pages/AboutPage';
 import ProfilePage from '../pages/ProfilePage';
 import WalletPage from '../pages/WalletPage';
+import PaymentMethodsPage from '../pages/PaymentMethodsPage';
+import AddPaymentMethodPage from '../pages/AddPaymentMethodPage';
 
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
-const Stack = createNativeStackNavigator();
 
+import { View } from 'react-native-web';
+import ModalStackNav from './ModalStackNav';
 
+const StackMainView = createNativeStackNavigator();
 export default function SignedInNav() {
   return (
-    <Stack.Navigator screenOptions={({ route, navigation })=> ({headerShown: false})}>
-        <Stack.Group>
-            <Stack.Screen name="Home" component={HomePage} />
-            <Stack.Screen name="Search" component={SearchPage} />
-        </Stack.Group>
-        <Stack.Group>
-            <Stack.Screen name="Settings" component={SettingsPage} />
-            <Stack.Screen name="Profile" component={ProfilePage} />
-            <Stack.Screen name="Wallet" component={WalletPage} />
-            <Stack.Screen name="About" component={AboutPage} />
-        </Stack.Group>
-    </Stack.Navigator>
+    <View style={{height: '100%', width: '100%'}}>
+      <View style={{height: '100%', width: '100%'}}>
+        <StackMainView.Navigator screenOptions={({ route, navigation })=> ({headerShown: false})}>
+          <StackMainView.Group>
+              <StackMainView.Screen name="Home" component={HomePage} />
+              <StackMainView.Screen name="Search" component={SearchPage} />
+          </StackMainView.Group>
+          <StackMainView.Group>
+          <StackMainView.Screen name="Settings" component={SettingsPage} />
+            <StackMainView.Screen name="Profile" component={ProfilePage} />
+            <StackMainView.Screen name="Wallet" component={WalletPage} />
+            <StackMainView.Screen name="About" component={AboutPage} />
+            <StackMainView.Screen name="PaymentMethods" component={PaymentMethodsPage} />
+            <StackMainView.Screen name="AddPaymentMethod" component={AddPaymentMethodPage} />
+            </StackMainView.Group>
+      </StackMainView.Navigator>
+      </View>
+    </View>
   )
 }

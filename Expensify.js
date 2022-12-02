@@ -3,9 +3,8 @@ import React, { useState } from 'react'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import SignedInNav from './navigation/SignedInNav';
 import SignedOffNav from './navigation/SignedOffNav';
-
-
-
+import Linking from './navigation/Routes';
+  
 
 export default function Expensify() {
     const [isLoggedIn, setLoggedIn ] = useState(false);
@@ -14,7 +13,7 @@ export default function Expensify() {
     }
     return (
     <SafeAreaProvider>
-        <NavigationContainer>
+        <NavigationContainer linking={Linking}>
             { isLoggedIn ? (<SignedInNav/>) : (<SignedOffNav callbackFunction={setData} />) }
         </NavigationContainer>
     </SafeAreaProvider>
