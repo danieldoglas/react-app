@@ -13,6 +13,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import { View } from 'react-native-web';
 import ModalStackNav from './ModalStackNav';
 
+
 const StackMainView = createNativeStackNavigator();
 export default function SignedInNav() {
   return (
@@ -24,12 +25,12 @@ export default function SignedInNav() {
               <StackMainView.Screen name="Search" component={SearchPage} />
           </StackMainView.Group>
           <StackMainView.Group>
-          <StackMainView.Screen name="Settings" component={SettingsPage} />
-            <StackMainView.Screen name="Profile" component={ProfilePage} />
-            <StackMainView.Screen name="Wallet" component={WalletPage} />
-            <StackMainView.Screen name="About" component={AboutPage} />
-            <StackMainView.Screen name="PaymentMethods" component={PaymentMethodsPage} />
-            <StackMainView.Screen name="AddPaymentMethod" component={AddPaymentMethodPage} />
+          <StackMainView.Screen name="Settings" component={SettingsPage} options={{ presentation: 'transparentModal' }} />
+            <StackMainView.Screen name="Profile" component={ProfilePage}  options={{ presentation: 'transparentModal' }} />
+            <StackMainView.Screen name="Wallet" component={WalletPage} options={{ presentation: 'transparentModal' }} />
+            <StackMainView.Screen name="About" component={AboutPage}  options={{ presentation: 'transparentModal' }}/>
+            <StackMainView.Screen name="PaymentMethods" component={PaymentMethodsPage} options={{ presentation: 'transparentModal' }} />
+            <StackMainView.Screen name="AddPaymentMethod" component={AddPaymentMethodPage} options={{ presentation: 'transparentModal' }} />
             </StackMainView.Group>
       </StackMainView.Navigator>
       </View>

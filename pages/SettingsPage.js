@@ -8,7 +8,11 @@ export default function SettingsPage({navigation}) {
 <SafeAreaView style={{
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100%'
+        height: '100%',
+        width: '30%',
+        right: 0,
+        position: 'absolute',
+        backgroundColor:"blue"
       }}>
       <Text>Settings Page</Text>
       <View>
